@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 html {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Roboto Mono', monospace;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -34,7 +36,31 @@ button:hover {
 }
 
 body {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculatorContainer {
+    background-color: greenyellow;
+    margin-top: 10%;
+    width: 500px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.IOContainer {
+}
+
+.input, .output {
+    text-align: end;
+    height: 40px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
 }
 
 /* TABLETS AND SPLIT SCREEN */

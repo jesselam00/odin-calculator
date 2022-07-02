@@ -86,9 +86,15 @@ function addOperatorToInput(operator) {
     inputOperation = inputOperation + ` ${currentOperator} `
 }
 
+function replaceOperatorInInput(operator) {
+    inputOperation = inputOperation.slice(0,-3)
+    inputOperation = inputOperation + ` ${currentOperator} `
+}
+
 function clickOperationButton() {
     storeNumber()
     currentNumber = ""
+    const duplicateOperator = currentOperator
     const operatorID = this.id
     switch (operatorID) {
         case "addButton":
@@ -104,8 +110,15 @@ function clickOperationButton() {
             currentOperator = "/"
             break
     }
-    addOperatorToInput()
-    input.textContent = inputOperation
+    if (currentOperator === duplicateOperator) return
+    else if (duplicateOperator !== null) {
+        replaceOperatorInInput()
+        input.textContent = inputOperation
+    }
+    else {
+        addOperatorToInput()
+        input.textContent = inputOperation
+    }
 }
 
 function clickEqualsButton() {
