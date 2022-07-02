@@ -40,7 +40,7 @@ function resetInputOperation() {
 
 function storeNumber() {
     firstNumber !== null ? secondNumber = currentNumber : firstNumber = currentNumber
-    inputOperation += currentNumber
+    inputOperation += Number(currentNumber).toString()
 }
 
 function clickNumberButton() {
@@ -76,6 +76,9 @@ function clickNumberButton() {
             break
         case "zero":
             number = "0"
+            break
+        case "decimal":
+            number = "."
             break
     }
     currentNumber += number
@@ -198,3 +201,6 @@ const clearButton = document.querySelector("#clearButton")
 clearButton.addEventListener("click", clickClearButton)
 const deleteButton = document.querySelector("#deleteButton")
 deleteButton.addEventListener("click", clickDeleteButton)
+
+const decimal = document.querySelector("#decimal")
+decimal.addEventListener("click", clickNumberButton)

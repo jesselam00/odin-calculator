@@ -20,6 +20,7 @@ div {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 ul {
@@ -28,12 +29,8 @@ ul {
     padding: 0;
 }
 
-button {
-    transition: all .2s ease-in-out;
-}
-
 button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 body {
@@ -86,7 +83,7 @@ body {
     align-items: center;
     gap: 20px;
     width: 360px;
-    margin-top: 50px;
+    margin-top: 40px;
     padding: 10px;
 }
 
@@ -96,6 +93,14 @@ body {
     width: 100px;
     border-style: solid;
     border-radius: 10px;
+    font-size: 18px;
+}
+
+.buttonContainer #clearButton {
+    font-size: 16px;
+}
+.buttonContainer #deleteButton {
+    font-size: 16px;
 }
 
 footer {
@@ -104,6 +109,65 @@ footer {
     bottom: 0;
     margin-bottom: 10px;
     margin-right: 10px;
+}
+
+footer a {
+    font-size: 24px;
+}
+
+#clearButton:hover {
+    background-color: #ffb3ba;
+}
+#deleteButton:hover {
+    background-color: 	#ffdfba;
+}
+#zero:hover {
+    background-color: #ffffba;
+}
+#one:hover {
+    background-color: #baffc9;
+}
+#two:hover {
+    background-color: #bae1ff;
+}
+#three:hover {
+    background-color: #dabaff;
+}
+#four:hover {
+    background-color: #ffb3ba;
+}
+#five:hover {
+    background-color: #ffdfba;
+}
+#six:hover {
+    background-color: #ffffba;
+}
+#seven:hover {
+    background-color: #baffc9;
+}
+#eight:hover {
+    background-color: #bae1ff;
+}
+#nine:hover {
+    background-color: #dabaff;
+}
+#decimal:hover {
+    background-color: #ffb3ba;
+}
+#addButton:hover{
+    background-color: #ffdfba;
+}
+#subtractButton:hover {
+    background-color: #ffffba;
+}
+#multiplyButton:hover {
+    background-color: #baffc9;
+}
+#divideButton:hover {
+    background-color: #bae1ff;
+}
+#equalsButton:hover {
+    background-color: #dabaff;
 }
 
 /* TABLETS AND SPLIT SCREEN */
