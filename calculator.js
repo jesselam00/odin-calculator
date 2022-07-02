@@ -27,10 +27,11 @@ function operate(operator,a,b) {
     }
 }
 
-function resetNumbers() {
+function resetState() {
     currentNumber = ""
     firstNumber = null
     secondNumber = null
+    currentOperator = null
 }
 
 function resetInputOperation() {
@@ -43,41 +44,41 @@ function storeNumber() {
 }
 
 function clickNumberButton() {
+    if (currentNumber.length >= 7) return
     let number = this.id
     switch(number) {
         case "one":
-            number = 1
+            number = "1"
             break
         case "two":
-            number = 2
+            number = "2"
             break
         case "three":
-            number = 3
+            number = "3"
             break
         case "four":
-            number = 4
+            number = "4"
             break
         case "five":
-            number = 5
+            number = "5"
             break
         case "six":
-            number = 6
+            number = "6"
             break
         case "seven":
-            number = 7
+            number = "7"
             break
         case "eight":
-            number = 8
+            number = "8"
             break
         case "nine":
-            number = 9
+            number = "9"
             break
         case "zero":
-            number = 0
+            number = "0"
             break
     }
     currentNumber += number
-    console.log(currentNumber)
     input.textContent = inputOperation + currentNumber
 }
 
@@ -109,22 +110,34 @@ function clickOperationButton() {
 
 function clickEqualsButton() {
     storeNumber()
-    console.log(secondNumber, currentOperator)
     if (secondNumber == 0 && currentOperator == "/") {
         input.textContent = "Divide by zero"
         output.textContent = inputOperation + " ="
-        resetNumbers()
+        resetState()
         resetInputOperation()
     }
     else{
         const finalNumber = operate(currentOperator,firstNumber,secondNumber)
         input.textContent = Number(finalNumber.toFixed(7))
         output.textContent = inputOperation + " ="
-        resetNumbers()
+        resetState()
         resetInputOperation()
-        firstNumber = Number(finalNumber.toFixed(7))
-        inputOperation = firstNumber
+        currentNumber = Number(finalNumber.toFixed(7)).toString()
+        inputOperation = ""
     }
+}
+
+function clickClearButton() {
+    resetState()
+    resetInputOperation()
+    input.textContent = ""
+    output.textContent = ""
+}
+
+function clickDeleteButton() {
+    currentNumber = currentNumber.slice(0,-1)
+    currentNumber == "" ? clickClearButton() : input.textContent = inputOperation + currentNumber
+    
 }
 
 let currentNumber = ""
@@ -167,3 +180,8 @@ multiplyButton.addEventListener("click",clickOperationButton)
 
 const equalsButton = document.querySelector("#equalsButton")
 equalsButton.addEventListener("click", clickEqualsButton)
+
+const clearButton = document.querySelector("#clearButton")
+clearButton.addEventListener("click", clickClearButton)
+const deleteButton = document.querySelector("#deleteButton")
+deleteButton.addEventListener("click", clickDeleteButton)
