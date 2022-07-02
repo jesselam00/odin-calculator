@@ -41,7 +41,7 @@ body {
 }
 
 .calculatorContainer {
-    margin-top: 40px;
+    margin-top: 80px;
     background-color: #E1E1E1;
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@ body {
 
 .input, .output {
     text-align: end;
-    font-size: 28px;
+    font-size: 18px;
     height: 40px;
     white-space: nowrap;
     padding: 0;
@@ -73,6 +73,7 @@ body {
 }
 .input {
     margin-bottom: 20px;
+    font-size: 28px;
 }
 
 .buttonContainer {
