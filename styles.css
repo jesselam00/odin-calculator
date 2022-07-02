@@ -5,6 +5,7 @@ html {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    background-color: #FFFFFF;
 }
 
 *, *:before, *:after {
@@ -37,30 +38,72 @@ button:hover {
 
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .calculatorContainer {
-    background-color: greenyellow;
-    margin-top: 10%;
-    width: 500px;
-    padding-left: 50px;
-    padding-right: 50px;
+    margin-top: 40px;
+    background-color: #E1E1E1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    
+    width: 580px;
+    padding: 50px 80px;
+    border-style: solid;
+    border-radius: 15px;
 }
 
 .IOContainer {
+    background-color: white;
+    padding: 30px 50px;
+    border-style: solid;
+    border-radius: 15px;
+    width: 400px;
 }
 
 .input, .output {
     text-align: end;
+    font-size: 28px;
     height: 40px;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+}
+.input {
+    margin-bottom: 20px;
 }
 
 .buttonContainer {
     display: flex;
+    flex-shrink: 0;
     flex-wrap: wrap;
-    gap: 10px
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 360px;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.buttonContainer button {
+    background-color: white;
+    height: 60px;
+    width: 100px;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 /* TABLETS AND SPLIT SCREEN */
