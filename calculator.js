@@ -85,19 +85,35 @@ function clickNumberButton() {
     input.textContent = inputOperation + currentNumber
 }
 
-function addOperatorToInput(operator) {
-    inputOperation = inputOperation + ` ${currentOperator} `
-}
-
-function replaceOperatorInInput(operator) {
-    inputOperation = inputOperation.slice(0,-3)
-    inputOperation = inputOperation + ` ${currentOperator} `
-}
 
 function clickOperationButton() {
-    storeNumber()
-    currentNumber = ""
-    const duplicateOperator = currentOperator
+    if (currentNumber === "" && currentOperator === null) return
+    if (firstNumber !== null && currentNumber === "" && currentOperator !== null) {
+        inputOperation = inputOperation.slice(0,-3)
+        const operatorID = this.id
+        switch (operatorID) {
+            case "addButton":
+                currentOperator = "+"
+                break
+            case "subtractButton":
+                currentOperator = "-"
+                break
+            case "multiplyButton":
+                currentOperator = "*"
+                break
+            case "divideButton":
+                currentOperator = "/"
+                break
+        }
+        inputOperation = inputOperation + ` ${currentOperator} `
+        console.log("test")
+        input.textContent = inputOperation
+        
+        return
+    }
+    else if (firstNumber !== null && currentNumber !== 0) {
+        clickEqualsButton()
+    }
     const operatorID = this.id
     switch (operatorID) {
         case "addButton":
@@ -113,15 +129,10 @@ function clickOperationButton() {
             currentOperator = "/"
             break
     }
-    if (currentOperator === duplicateOperator) return
-    else if (duplicateOperator !== null) {
-        replaceOperatorInInput()
-        input.textContent = inputOperation
-    }
-    else {
-        addOperatorToInput()
-        input.textContent = inputOperation
-    }
+    storeNumber()
+    currentNumber = ""
+    inputOperation = inputOperation + ` ${currentOperator} `
+    input.textContent = inputOperation
 }
 
 function clickEqualsButton() {
