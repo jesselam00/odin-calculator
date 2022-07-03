@@ -81,6 +81,7 @@ function clickNumberButton() {
             number = "."
             break
     }
+    if (number === "." && currentNumber.includes(".")) return
     currentNumber += number
     input.textContent = inputOperation + currentNumber
 }
