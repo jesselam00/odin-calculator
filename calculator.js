@@ -106,7 +106,6 @@ function clickOperationButton() {
                 break
         }
         inputOperation = inputOperation + ` ${currentOperator} `
-        console.log("test")
         input.textContent = inputOperation
         
         return
@@ -136,6 +135,8 @@ function clickOperationButton() {
 }
 
 function clickEqualsButton() {
+    if (currentNumber === null) return
+    else if (currentOperator === null) return
     storeNumber()
     if (secondNumber == 0 && currentOperator == "/") {
         input.textContent = "Divide by zero"
