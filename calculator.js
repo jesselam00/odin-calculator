@@ -186,36 +186,36 @@ const seven = document.querySelector("#seven")
 const eight = document.querySelector("#eight")
 const nine = document.querySelector("#nine")
 const zero = document.querySelector("#zero")
-one.addEventListener("mousedown", clickNumberButton)
-two.addEventListener("mousedown", clickNumberButton)
-three.addEventListener("mousedown", clickNumberButton)
-four.addEventListener("mousedown", clickNumberButton)
-five.addEventListener("mousedown", clickNumberButton)
-six.addEventListener("mousedown", clickNumberButton)
-seven.addEventListener("mousedown", clickNumberButton)
-eight.addEventListener("mousedown", clickNumberButton)
-nine.addEventListener("mousedown", clickNumberButton)
-zero.addEventListener("mousedown", clickNumberButton)
+one.addEventListener("click", clickNumberButton)
+two.addEventListener("click", clickNumberButton)
+three.addEventListener("click", clickNumberButton)
+four.addEventListener("click", clickNumberButton)
+five.addEventListener("click", clickNumberButton)
+six.addEventListener("click", clickNumberButton)
+seven.addEventListener("click", clickNumberButton)
+eight.addEventListener("click", clickNumberButton)
+nine.addEventListener("click", clickNumberButton)
+zero.addEventListener("click", clickNumberButton)
 
 const addButton = document.querySelector("#addButton")
-addButton.addEventListener("mousedown",clickOperationButton)
+addButton.addEventListener("click",clickOperationButton)
 const subtractButton = document.querySelector("#subtractButton")
-subtractButton.addEventListener("mousedown",clickOperationButton)
+subtractButton.addEventListener("click",clickOperationButton)
 const divideButton = document.querySelector("#divideButton")
-divideButton.addEventListener("mousedown",clickOperationButton)
+divideButton.addEventListener("click",clickOperationButton)
 const multiplyButton = document.querySelector("#multiplyButton")
-multiplyButton.addEventListener("mousedown",clickOperationButton)
+multiplyButton.addEventListener("click",clickOperationButton)
 
 const equalsButton = document.querySelector("#equalsButton")
-equalsButton.addEventListener("mousedown", clickEqualsButton)
+equalsButton.addEventListener("click", clickEqualsButton)
 
 const clearButton = document.querySelector("#clearButton")
-clearButton.addEventListener("mousedown", clickClearButton)
+clearButton.addEventListener("click", clickClearButton)
 const deleteButton = document.querySelector("#deleteButton")
-deleteButton.addEventListener("mousedown", clickDeleteButton)
+deleteButton.addEventListener("click", clickDeleteButton)
 
 const decimal = document.querySelector("#decimal")
-decimal.addEventListener("mousedown", clickNumberButton)
+decimal.addEventListener("click", clickNumberButton)
 
 function keyPressed(e) {
     const key = e.key
@@ -225,14 +225,61 @@ function keyPressed(e) {
             clickEqualsButton()
             break
         case "Escape":
+        case "C":
             clickClearButton()
             break
         case "Backspace":
+        case "D":
             clickDeleteButton()
             break
-        case "1":
-            one.dispatchEvent("mousedown")
+        case "0":
+            zero.click()
             break
+        case "1":
+            one.click()
+            break
+        case "2":
+            two.click()
+            break
+        case "3":
+            three.click()
+            break
+        case "4":
+            four.click()
+            break
+        case "5":
+            five.click()
+            break
+        case "6":
+            six.click()
+            break
+        case "7":
+            seven.click()
+            break
+        case "8":
+            eight.click()
+            break
+        case "9":
+            nine.click()
+            break
+        case ".":
+            decimal.click()
+            break
+        case "+":
+            addButton.click()
+            break
+        case "-":
+            subtractButton.click()
+            break
+        case "*":
+        case "x":
+            multiplyButton.click()
+            break
+        case "/":
+            divideButton.click()
+            break
+
+    
     }
 }
 
