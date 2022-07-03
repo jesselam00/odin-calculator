@@ -52,7 +52,7 @@ body {
     width: 580px;
     padding: 50px 80px;
     border-style: solid;
-    border-radius: 15px;
+    border-radius: 30px;
 }
 
 .IOContainer {
@@ -116,8 +116,14 @@ footer a {
     font-size: 24px;
 }
 
+#clearButton {
+    background-color: #f78a95;
+}
 #clearButton:hover {
     background-color: #ffb3ba;
+}
+#deleteButton {
+    background-color: #ffc889;;
 }
 #deleteButton:hover {
     background-color: 	#ffdfba;
@@ -173,10 +179,11 @@ footer a {
 
 /* TABLETS AND SPLIT SCREEN */
 @media only screen and (max-width: 1200px) {
-    
 }
 
 /* PHONES */
 @media only screen and (max-width: 600px) {
-    
+    html {
+        zoom: 60%
+    }
 }

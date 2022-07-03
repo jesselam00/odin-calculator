@@ -186,33 +186,54 @@ const seven = document.querySelector("#seven")
 const eight = document.querySelector("#eight")
 const nine = document.querySelector("#nine")
 const zero = document.querySelector("#zero")
-one.addEventListener("click", clickNumberButton)
-two.addEventListener("click", clickNumberButton)
-three.addEventListener("click", clickNumberButton)
-four.addEventListener("click", clickNumberButton)
-five.addEventListener("click", clickNumberButton)
-six.addEventListener("click", clickNumberButton)
-seven.addEventListener("click", clickNumberButton)
-eight.addEventListener("click", clickNumberButton)
-nine.addEventListener("click", clickNumberButton)
-zero.addEventListener("click", clickNumberButton)
+one.addEventListener("mousedown", clickNumberButton)
+two.addEventListener("mousedown", clickNumberButton)
+three.addEventListener("mousedown", clickNumberButton)
+four.addEventListener("mousedown", clickNumberButton)
+five.addEventListener("mousedown", clickNumberButton)
+six.addEventListener("mousedown", clickNumberButton)
+seven.addEventListener("mousedown", clickNumberButton)
+eight.addEventListener("mousedown", clickNumberButton)
+nine.addEventListener("mousedown", clickNumberButton)
+zero.addEventListener("mousedown", clickNumberButton)
 
 const addButton = document.querySelector("#addButton")
-addButton.addEventListener("click",clickOperationButton)
+addButton.addEventListener("mousedown",clickOperationButton)
 const subtractButton = document.querySelector("#subtractButton")
-subtractButton.addEventListener("click",clickOperationButton)
+subtractButton.addEventListener("mousedown",clickOperationButton)
 const divideButton = document.querySelector("#divideButton")
-divideButton.addEventListener("click",clickOperationButton)
+divideButton.addEventListener("mousedown",clickOperationButton)
 const multiplyButton = document.querySelector("#multiplyButton")
-multiplyButton.addEventListener("click",clickOperationButton)
+multiplyButton.addEventListener("mousedown",clickOperationButton)
 
 const equalsButton = document.querySelector("#equalsButton")
-equalsButton.addEventListener("click", clickEqualsButton)
+equalsButton.addEventListener("mousedown", clickEqualsButton)
 
 const clearButton = document.querySelector("#clearButton")
-clearButton.addEventListener("click", clickClearButton)
+clearButton.addEventListener("mousedown", clickClearButton)
 const deleteButton = document.querySelector("#deleteButton")
-deleteButton.addEventListener("click", clickDeleteButton)
+deleteButton.addEventListener("mousedown", clickDeleteButton)
 
 const decimal = document.querySelector("#decimal")
-decimal.addEventListener("click", clickNumberButton)
+decimal.addEventListener("mousedown", clickNumberButton)
+
+function keyPressed(e) {
+    const key = e.key
+    switch (key) {
+        case "Enter":
+        case "=":
+            clickEqualsButton()
+            break
+        case "Escape":
+            clickClearButton()
+            break
+        case "Backspace":
+            clickDeleteButton()
+            break
+        case "1":
+            one.dispatchEvent("mousedown")
+            break
+    }
+}
+
+window.addEventListener('keydown', keyPressed);
